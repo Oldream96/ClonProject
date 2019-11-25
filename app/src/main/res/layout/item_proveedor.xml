@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/item_proveedor"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="5dp">
+
+    <TextView
+        android:id="@+id/tvNombreComercial"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="15dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="Ferreteria Total Home S.A."
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvAfiliacion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblRuc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="RUC: "
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombreComercial" />
+
+    <TextView
+        android:id="@+id/tvRuc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="10465842581"
+        app:layout_constraintStart_toEndOf="@+id/lblRuc"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombreComercial" />
+
+    <TextView
+        android:id="@+id/lblLocales"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="N° Locales: "
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tvRuc"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombreComercial" />
+
+    <TextView
+        android:id="@+id/tvNumLocales"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="4"
+        app:layout_constraintStart_toEndOf="@+id/lblLocales"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombreComercial" />
+
+    <TextView
+        android:id="@+id/tvAfiliacion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:gravity="right"
+        android:text="AFILIADO"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombreComercial" />
+
+    <TextView
+        android:id="@+id/lblContacto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="Representante: "
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRuc"
+        app:layout_constraintBottom_toTopOf="@+id/view"/>
+
+    <TextView
+        android:id="@+id/tvContacto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="15dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="Samuel Flores Hernandez"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblContacto"
+        app:layout_constraintTop_toBottomOf="@+id/tvRuc"
+        app:layout_constraintBottom_toTopOf="@+id/view"/>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="0.02dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+
+        android:background="@color/md_grey_500"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

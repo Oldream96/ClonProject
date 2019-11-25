@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/iconEstado"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/ic_prospecto"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/view"/>
+    <TextView
+        android:id="@+id/nombre"
+        android:layout_width="0dp"
+        android:text="Sol Abigail Mamani Mamani"
+        android:maxLines="1"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:textColor="@color/black_text"
+        app:layout_constraintEnd_toStartOf="@+id/estado_txt"
+        app:layout_constraintStart_toEndOf="@+id/iconEstado"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/dni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DNI: "
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintStart_toEndOf="@+id/iconEstado"
+        app:layout_constraintTop_toBottomOf="@+id/nombre"
+        app:layout_constraintBottom_toTopOf="@+id/view"/>
+    <TextView
+        android:id="@+id/txt_dni"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="76078879"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif-condensed-light"
+        app:layout_constraintStart_toEndOf="@+id/dni"
+        app:layout_constraintEnd_toStartOf="@+id/estado_txt"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/nombre"/>
+
+    <TextView
+        android:id="@+id/estado_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="APROBADO"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif-condensed-light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/view"/>
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="0.1dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/md_grey_400"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

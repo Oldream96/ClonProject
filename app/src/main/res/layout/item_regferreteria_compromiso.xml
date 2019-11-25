@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="5dp"
+    android:orientation="vertical"
+    android:id="@+id/clItemDetalleCompromiso">
+
+    <CheckBox
+        android:id="@+id/chkFerreteriaCompromiso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:buttonTint="@color/md_green_700"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvferrenombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="14dp"
+        android:text="Ferreteria Total Home"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/chkFerreteriaCompromiso"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvferreruc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RUC: 2011231141"
+        app:layout_constraintStart_toStartOf="@+id/tvferrenombre"
+        app:layout_constraintTop_toBottomOf="@+id/tvferrenombre" />
+
+    <TextView
+        android:id="@+id/tvMotivoRefiere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Motivo porque no refiere: "
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/chkFerreteriaCompromiso"
+        app:layout_constraintTop_toBottomOf="@+id/chkFerreteriaCompromiso" />
+
+    <EditText
+        android:id="@+id/edtmotivoferre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:inputType="textMultiLine|textCapCharacters"
+        android:lines="2"
+        android:maxLength="200"
+        android:background="@drawable/border_edt"
+        android:textColor="@color/md_black_1000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMotivoRefiere" />
+
+    <TextView
+        android:id="@+id/tv_accionDetalle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Accion: "
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtmotivoferre" />
+
+    <EditText
+        android:id="@+id/edtaccionferre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:inputType="textMultiLine|textCapCharacters"
+        android:lines="2"
+        android:maxLength="200"
+        android:background="@drawable/border_edt"
+        android:textColor="@color/md_black_1000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_accionDetalle" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="4dp"
+                android:layout_height="0dp"
+                android:background="@color/md_yellow_700"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/txt_datos_generales"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="Datos Generales"
+                android:textSize="20dp"
+                android:layout_margin="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="4dp"
+                android:layout_height="0dp"
+                android:background="@color/md_yellow_700"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/card_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_datos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clDatos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_margin="5dp">
+
+                <View
+                    android:id="@+id/third"
+                    android:layout_width="0.1dp"
+                    android:layout_height="0.1dp"
+                    android:layout_marginLeft="100dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constCodigo"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <View
+                        android:id="@+id/third_cod"
+                        android:layout_width="0.1dp"
+                        android:layout_height="0.1dp"
+                        android:layout_marginLeft="100dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/lblCod"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Código"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/etCodigo"
+                        app:layout_constraintEnd_toStartOf="@id/third_cod"
+                        app:layout_constraintBottom_toBottomOf="@+id/etCodigo"/>
+
+                    <EditText
+                        android:id="@+id/etCodigo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text=""
+                        android:background="@drawable/border_edt"
+                        android:padding="7dp"
+                        android:textStyle="bold"
+                        android:enabled="false"
+                        app:layout_constraintStart_toEndOf="@id/lblCod"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constEstado"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constCodigo"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <View
+                        android:id="@+id/third_estado"
+                        android:layout_width="0.1dp"
+                        android:layout_height="0.1dp"
+                        android:layout_marginLeft="100dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvEstado"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Estado"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/constspEstado"
+                        app:layout_constraintEnd_toStartOf="@+id/third_estado"
+                        app:layout_constraintBottom_toBottomOf="@id/constspEstado" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constspEstado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/backgroud_spinner"
+                        app:layout_constraintStart_toEndOf="@+id/tvEstado"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <Spinner
+                            android:id="@+id/spEstado"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingLeft="3dp"
+                            android:paddingRight="3dp"
+                            android:layout_margin="0dp"
+                            android:background="@android:color/transparent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:spinnerMode="dropdown"
+                            android:popupBackground="@color/md_white_1000"/>
+                        <View
+                            android:id="@+id/viewEstado"
+                            android:layout_width="0.5dp"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:layout_constraintStart_toEndOf="@+id/spEstado"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:background="@color/md_grey_500"/>
+                        <ImageView
+                            android:id="@+id/imageEstado"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_drop"
+                            android:rotation="90"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginEnd="6dp"
+                            app:layout_constraintStart_toEndOf="@+id/viewEstado"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginLeft="8dp" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constPlan"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constEstado"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <View
+                        android:id="@+id/third_plan"
+                        android:layout_width="0.1dp"
+                        android:layout_height="0.1dp"
+                        android:layout_marginLeft="100dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvPlan"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Plan"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/constspPlan"
+                        app:layout_constraintEnd_toStartOf="@+id/third_plan"
+                        app:layout_constraintBottom_toBottomOf="@id/constspPlan" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constspPlan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/backgroud_spinner"
+                        app:layout_constraintStart_toEndOf="@+id/tvPlan"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <Spinner
+                            android:id="@+id/spPlan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingLeft="3dp"
+                            android:paddingRight="3dp"
+                            android:layout_margin="0dp"
+                            android:background="@android:color/transparent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:spinnerMode="dropdown"
+                            android:popupBackground="@color/md_white_1000"/>
+                        <View
+                            android:id="@+id/viewPlan"
+                            android:layout_width="0.5dp"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:layout_constraintStart_toEndOf="@+id/spPlan"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:background="@color/md_grey_500"/>
+                        <ImageView
+                            android:id="@+id/imagePlan"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_drop"
+                            android:rotation="90"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginEnd="6dp"
+                            app:layout_constraintStart_toEndOf="@+id/viewPlan"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginLeft="8dp" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvTipo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Tipo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/constTipo"
+                    app:layout_constraintEnd_toStartOf="@+id/third"
+                    app:layout_constraintBottom_toBottomOf="@id/constTipo" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constTipo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/backgroud_spinner"
+                    app:layout_constraintStart_toEndOf="@+id/tvTipo"
+                    app:layout_constraintTop_toBottomOf="@id/constPlan">
+
+                    <Spinner
+                        android:id="@+id/spTipo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="3dp"
+                        android:layout_margin="0dp"
+                        android:background="@android:color/transparent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:spinnerMode="dropdown"
+                        android:popupBackground="@color/md_white_1000"/>
+                    <View
+                        android:id="@+id/viewTipo"
+                        android:layout_width="0.5dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        app:layout_constraintStart_toEndOf="@+id/spTipo"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:background="@color/md_grey_500"/>
+                    <ImageView
+                        android:id="@+id/imageTipo"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_drop"
+                        android:rotation="90"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginEnd="6dp"
+                        app:layout_constraintStart_toEndOf="@+id/viewTipo"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginLeft="8dp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvNombreComercial"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="N.Comercial"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/etNombreComercial"
+                    app:layout_constraintEnd_toStartOf="@+id/third"
+                    app:layout_constraintBottom_toBottomOf="@id/etNombreComercial"/>
+
+                <EditText
+                    android:id="@+id/etNombreComercial"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:hint="Nombre Comercial"
+                    android:background="@drawable/border_edt"
+                    android:padding="7dp"
+                    android:inputType="textCapCharacters"
+                    android:maxLength="100"
+                    app:layout_constraintStart_toEndOf="@id/tvNombreComercial"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constTipo"/>
+
+                <TextView
+                    android:id="@+id/tvContacto"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Contacto"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/etContacto"
+                    app:layout_constraintEnd_toStartOf="@+id/third"
+                    app:layout_constraintBottom_toBottomOf="@id/etContacto" />
+
+                <EditText
+                    android:id="@+id/etContacto"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:hint="Contacto"
+                    android:background="@drawable/border_edt"
+                    android:padding="7dp"
+                    android:inputType="textCapCharacters"
+                    android:maxLength="60"
+                    android:digits="ABCDEFGHIJKLMNÑOPQRSTUVWXYZ "
+                    app:layout_constraintStart_toEndOf="@+id/tvContacto"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etNombreComercial"/>
+                <TextView
+                    android:id="@+id/tvLocal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Local"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/constLocal"
+                    app:layout_constraintEnd_toStartOf="@+id/third"
+                    app:layout_constraintBottom_toBottomOf="@id/constLocal" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constLocal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/backgroud_spinner"
+                    app:layout_constraintStart_toEndOf="@+id/tvLocal"
+                    app:layout_constraintTop_toBottomOf="@+id/etContacto">
+
+                    <Spinner
+                        android:id="@+id/spLocal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="3dp"
+                        android:layout_margin="0dp"
+                        android:background="@android:color/transparent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:spinnerMode="dropdown"
+                        android:popupBackground="@color/md_white_1000"/>
+                    <View
+                        android:id="@+id/viewLocal"
+                        android:layout_width="0.5dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        app:layout_constraintStart_toEndOf="@+id/spLocal"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:background="@color/md_grey_500"/>
+                    <ImageView
+                        android:id="@+id/imageLocal"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_drop"
+                        android:rotation="90"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginEnd="6dp"
+                        app:layout_constraintStart_toEndOf="@+id/viewLocal"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginLeft="8dp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvSupervisor"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Supervisor"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/constSupervisor"
+                    app:layout_constraintEnd_toStartOf="@+id/third"
+                    app:layout_constraintBottom_toBottomOf="@id/constSupervisor" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constSupervisor"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/backgroud_spinner"
+                    app:layout_constraintStart_toEndOf="@+id/tvSupervisor"
+                    app:layout_constraintTop_toBottomOf="@+id/constLocal"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <Spinner
+                        android:id="@+id/spSupervisor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="3dp"
+                        android:layout_margin="0dp"
+                        android:background="@android:color/transparent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:spinnerMode="dropdown"
+                        android:popupBackground="@color/md_white_1000"/>
+                    <View
+                        android:id="@+id/viewSup"
+                        android:layout_width="0.5dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        app:layout_constraintEnd_toStartOf="@+id/imageSup"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@color/md_grey_500"/>
+                    <ImageView
+                        android:id="@+id/imageSup"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_drop"
+                        android:rotation="90"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginEnd="6dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvOrigen"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Origen"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/constOrigen"
+                    app:layout_constraintEnd_toStartOf="@+id/third"
+                    app:layout_constraintBottom_toBottomOf="@id/constOrigen" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constOrigen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/backgroud_spinner"
+                    app:layout_constraintStart_toEndOf="@+id/tvOrigen"
+                    app:layout_constraintTop_toBottomOf="@+id/constSupervisor">
+
+                    <Spinner
+                        android:id="@+id/spOrigen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="3dp"
+                        android:layout_margin="0dp"
+                        android:background="@android:color/transparent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:spinnerMode="dropdown"
+                        android:popupBackground="@color/md_white_1000"/>
+                    <View
+                        android:id="@+id/viewOrigen"
+                        android:layout_width="0.5dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        app:layout_constraintStart_toEndOf="@+id/spOrigen"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:background="@color/md_grey_500"/>
+                    <ImageView
+                        android:id="@+id/image"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_drop"
+                        android:rotation="90"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginEnd="6dp"
+                        app:layout_constraintStart_toEndOf="@+id/viewOrigen"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginLeft="8dp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvDistrito"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Distrito"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/autoCompleteDistrito"
+                    app:layout_constraintEnd_toStartOf="@+id/third"
+                    app:layout_constraintBottom_toBottomOf="@id/autoCompleteDistrito" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteDistrito"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:hint="Seleccione un Distrito"
+                    android:background="@drawable/border_edt"
+                    android:padding="7dp"
+                    android:completionThreshold="1"
+                    android:maxLines="1"
+                    app:layout_constraintStart_toEndOf="@+id/tvDistrito"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constOrigen"/>
+                <TextView
+                    android:id="@+id/tvCorreo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Correo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/etCorreo"
+                    app:layout_constraintEnd_toStartOf="@+id/third"
+                    app:layout_constraintBottom_toBottomOf="@id/etCorreo" />
+
+                <EditText
+                    android:id="@+id/etCorreo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:hint="Correo"
+                    android:background="@drawable/border_edt"
+                    android:padding="7dp"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="100"
+                    app:layout_constraintStart_toEndOf="@+id/tvCorreo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/autoCompleteDistrito"/>
+                <TextView
+                    android:id="@+id/tvDireccion"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Dirección"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/etDireccion"
+                    app:layout_constraintEnd_toStartOf="@+id/third"
+                    app:layout_constraintBottom_toBottomOf="@id/etDireccion" />
+
+                <EditText
+                    android:id="@+id/etDireccion"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:hint="Dirección"
+                    android:background="@drawable/border_edt"
+                    android:padding="7dp"
+                    android:inputType="textCapCharacters"
+                    android:maxLength="100"
+                    app:layout_constraintStart_toEndOf="@+id/tvCorreo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etCorreo"/>
+                <TextView
+                    android:id="@+id/tvReferencia"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Referencia"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/etReferencia"
+                    app:layout_constraintEnd_toStartOf="@+id/third"
+                    app:layout_constraintBottom_toBottomOf="@id/etReferencia" />
+                <EditText
+                    android:id="@+id/etReferencia"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:hint="Referencia"
+                    android:inputType="textCapCharacters"
+                    android:maxLength="100"
+                    android:lines="4"
+                    android:background="@drawable/border_edt"
+                    android:padding="7dp"
+                    app:layout_constraintStart_toEndOf="@+id/tvCorreo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etDireccion"/>
+                <TextView
+                    android:id="@+id/tvObservacion"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Observación"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/etObservacion"
+                    app:layout_constraintEnd_toStartOf="@+id/third"
+                    app:layout_constraintBottom_toBottomOf="@id/etObservacion" />
+                <EditText
+                    android:id="@+id/etObservacion"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:hint="Observación"
+                    android:inputType="textCapCharacters"
+                    android:maxLength="100"
+                    android:lines="4"
+                    android:background="@drawable/border_edt"
+                    android:padding="7dp"
+                    app:layout_constraintStart_toEndOf="@+id/tvCorreo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etReferencia"/>
+                <View
+                    android:id="@+id/center"
+                    android:layout_width="0.1dp"
+                    android:layout_height="0.1dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+                <EditText
+                    android:id="@+id/etTelefono"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_edt"
+                    android:padding="7dp"
+                    android:hint="Teléfono"
+                    android:inputType="number"
+                    android:maxLength="7"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etObservacion"/>
+                <EditText
+                    android:id="@+id/etCelular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_edt"
+                    android:padding="7dp"
+                    android:inputType="number"
+                    android:maxLength="9"
+                    android:layout_marginTop="5dp"
+                    android:hint="Celular"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/etObservacion"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/etTelefono"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

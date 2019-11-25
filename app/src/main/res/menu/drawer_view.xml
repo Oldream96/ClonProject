@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nv_creditos"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Mis Creditos"
+            android:checked="true"/>
+        <item
+            android:id="@+id/nv_registrar_asistencia"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Registrar Asistencia" />
+        <item
+            android:id="@+id/nav_encuestas"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Encuestas" />
+        <item
+            android:id="@+id/nav_afiliacion"
+            android:icon="@drawable/ic_establecimiento"
+            android:title="Afiliación" />
+        <item
+            android:id="@+id/nav_compromisos_fragment"
+            android:icon="@drawable/vector_reporte_asistencia"
+            android:title="Sabados Productivos" />
+    </group>
+    <item android:title="Opciones">
+        <menu>
+            <item
+                android:id="@+id/item_soporte"
+                android:icon="@drawable/ic_action_action_help"
+                android:title="Llamar a Sistemas" />
+
+            <item
+                android:id="@+id/item_salir"
+                android:icon="@drawable/ic_exit"
+                android:title="Cerrar Sesión" />
+        </menu>
+    </item>
+</menu>

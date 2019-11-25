@@ -1,0 +1,322 @@
+<resources>
+
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:textSize">13sp</item>
+        <item name="editTextStyle">@style/EditTextWhite</item>
+        <!-- <item name="spinnerStyle">@style/SpinnerStyle</item>-->
+        <item name="spinnerStyle">@style/SpinnerStyle2</item>
+        <item name="autoCompleteTextViewStyle">@style/AutoCompleteText</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="menu_labels_style">
+        <item name="android:background">@drawable/fab_label_background</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <!-- remove shadow below action bar -->
+        <!-- <item name="android:elevation">0dp</item> -->
+        <!-- Support library compatibility -->
+        <!-- <item name="elevation">50dp</item>-->
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="AppTheme2" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textSize">13dp</item>
+        <item name="editTextStyle">@style/EditTextWhite</item>
+    </style>
+
+
+    <!-- Base application theme.
+    <style name="AppTheme" parent="Base.AppTheme">
+
+    </style>
+
+    <style name="Base.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+         Customize your theme here.
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/black_text</item>
+        <item name="android:textSize">12.5dp</item>
+
+        <item name="android:editTextStyle">@style/EditText</item>
+        <item name="android:autoCompleteTextViewStyle">@style/AutoCompleteText</item>
+
+     <item name="actionBarStyle">@style/ActionBar</item>
+         <item name="windowActionBar">true</item>
+         <item name="android:windowActionBar">true</item>
+
+    </style>-->
+
+
+    <!--<style name="AppTheme" parent="Base.AppTheme">
+
+    </style>
+
+    <style name="Base.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/md_indigo_500</item>
+        <item name="colorPrimaryDark">@color/md_indigo_700</item>
+        <item name="colorAccent">@color/md_pink_500</item>
+        <item name="colorControlHighlight">@color/md_indigo_500_25</item>
+        <item name="android:windowBackground">@color/md_white_1000</item>
+    </style>-->
+
+    <style name="ToolbarTheme" parent="AppTheme">
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+    </style>
+
+    <style name="NavigationViewTheme" parent="AppTheme">
+        <item name="textAppearanceListItem">@style/TextAppearance.AppCompat.Body2</item>
+    </style>
+
+
+    <style name="AppThemeMonitor" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorMonitor</item>
+        <item name="colorPrimaryDark">@color/colorMonitor</item>
+        <item name="colorAccent">@color/colorMonitor</item>
+        <item name="android:textColor">@color/black_text</item>
+        <item name="android:textSize">13dp</item>
+
+        <item name="editTextStyle">@style/EditTextWhite</item>
+        <item name="android:autoCompleteTextViewStyle">@style/AutoCompleteText</item>
+
+
+        <!-- <item name="actionBarStyle">@style/ActionBar</item>
+         <item name="windowActionBar">true</item>
+         <item name="android:windowActionBar">true</item>
+ -->
+    </style>
+    <!-- <style name="ActionBar" parent="@android:style/Widget.Holo.ActionBar">
+         <item name="android:background">#079411</item>
+     </style>
+ -->
+
+
+    <!--<style name="NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+         Hides the Action Bar
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:editTextStyle">@style/EditText</item>
+        <item name="android:textSize">13dp</item>
+         Hides the status bar
+    </style>-->
+
+    <style name="NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="editTextStyle">@style/EditTextWhite</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:textSize">13dp</item>
+        <!-- Hides the status bar -->
+    </style>
+
+
+    <style name="btn_black">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="elevation">15dp</item>
+    </style>
+
+    <style name="EditTextWhite" parent="@android:style/Widget.EditText">
+
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <!--        <item name="android:background">@drawable/textbox</item>-->
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:inputType">textNoSuggestions</item>
+    </style>
+
+    <style name="SpinnerStyle2" parent="@android:style/Widget.Spinner">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <!--        <item name="android:background">@drawable/textbox</item>-->
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+    </style>
+
+    <style name="SpinnerStyle" parent="@android:style/Widget.Spinner">
+
+        <!--        <item name="android:background">@drawable/spinner_background</item>-->
+    </style>
+
+
+    <style name="AutoCompleteText" parent="@android:style/Widget.AutoCompleteTextView">
+        <item name="android:padding">10dp</item>
+        <!--        <item name="android:background">@drawable/textbox</item>-->
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:textColor">@color/black_text</item>
+
+
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+    </style>
+
+
+    <style name="Toolbar">
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+    </style>
+
+
+    <style name="ShowcaseButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">96dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <!--        <item name="android:background">@drawable/button</item>-->
+    </style>
+
+
+    <!-- <style name="CustomTitle" parent="TextAppearance.ShowcaseView.Title">
+         <item name="android:textColor">#fcda00</item>
+     </style>
+
+     <style name="CustomTitle2" parent="TextAppearance.ShowcaseView.Title.Light">
+         <item name="android:textColor">#deffffff</item>
+     </style>
+
+     <style name="CustomText2" parent="TextAppearance.ShowcaseView.Detail.Light">
+         <item name="android:textColor">#8affffff</item>
+     </style>-->
+
+    <style name="ListItemBigtext">
+        <item name="android:textColor">#25467A</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="ListItemSubtext">
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+
+
+    <style name="SubTitulo">
+        <item name="android:textColor">#ffff</item>
+        <item name="android:textSize">18sp</item>
+
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+    </style>
+
+
+    <style name="espacio">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
+
+    <!--MOSTRAR DIALOG PARA LA WEB-->
+    <style name="MaterialStyledDialogs_Title">
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginBottom">-10dp</item>
+        <item name="android:layout_marginLeft">26dp</item>
+        <item name="android:layout_marginRight">26dp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:textColor">@android:color/primary_text_light</item>
+        <!--<item name="android:textSize">@dimen/md_styled_text_title</item>-->
+        <item name="android:textStyle">bold</item>
+        <item name="android:alpha">0.6</item>
+    </style>
+
+    <style name="MaterialStyledDialogs_TitleHeader">
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="MaterialStyledDialogs_Description">
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:layout_marginLeft">26dp</item>
+        <item name="android:layout_marginRight">26dp</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:textColor">@android:color/primary_text_light</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:alpha">0.6</item>
+    </style>
+
+    <style name="MaterialStyledDialogs_Divider">
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:background">@android:color/darker_gray</item>
+        <item name="android:alpha">0.3</item>
+    </style>
+
+
+    <style name="MaterialStyledDialogs_DialogAnimationNormal">
+        <!--<item name="android:windowEnterAnimation">@anim/md_styled_slide_up_normal</item>-->
+        <!--<item name="android:windowExitAnimation">@anim/md_styled_slide_down_normal</item>-->
+    </style>
+
+    <style name="MaterialStyledDialogs_DialogAnimationFast">
+        <!--<item name="android:windowEnterAnimation">@anim/md_styled_slide_up_fast</item>-->
+        <!--<item name="android:windowExitAnimation">@anim/md_styled_slide_down_fast</item>-->
+    </style>
+
+    <style name="MaterialStyledDialogs_DialogAnimationSlow">
+        <!--<item name="android:windowEnterAnimation">@anim/md_styled_slide_up_slow</item>-->
+        <!--<item name="android:windowExitAnimation">@anim/md_styled_slide_down_slow</item>-->
+    </style>
+
+
+    <!--FIN DIALOG PARA LA WEB-->
+    <style name="custom_fab">
+        <!--        <item name="android:background">@drawable/fab_label_background</item>-->
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="ColorTitle">
+        <item name="android:textColor">#fcda00</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+    </style>
+
+    <style name="btn_green">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="elevation">15dp</item>
+    </style>
+
+    <style name="spinnerItemStyle" parent="android:Widget.TextView.SpinnerItem"></style>
+
+    <style name="spinnerDropDownItemStyle" parent="android:TextAppearance.Widget.TextView.SpinnerItem"></style>
+</resources>

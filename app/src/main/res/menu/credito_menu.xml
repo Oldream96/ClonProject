@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="pe.com.hatunsol.hatun_android.ContactoActivity">
+
+
+    <item
+        android:id="@+id/persona_contacto"
+        android:orderInCategory="5"
+        android:title="Agregar Persona Contacto"
+        app:showAsAction="never"
+        android:visible="false"/>
+    <item
+        android:id="@+id/agregar_conyuge"
+        android:orderInCategory="3"
+        android:title="Agregar Conyuge"
+        android:icon="@drawable/ic_menu"
+        app:showAsAction="never"
+        android:visible="false"/>
+    <item
+        android:id="@+id/agregar_garante_propiedad"
+        android:orderInCategory="2"
+        android:title="Agregar Garante de Propiedad"
+        app:showAsAction="never"
+        android:visible="false"/>
+    <item
+        android:id="@+id/agregar_conyuge_propiedad"
+        android:orderInCategory="4"
+        android:title="Agregar Conyuge G. Propiedad"
+        app:showAsAction="never"
+        android:visible="false"/>
+    <item
+        android:id="@+id/agregar_garante_ingresos"
+        android:orderInCategory="1"
+        android:title="Agregar Garante de Ingresos"
+        app:showAsAction="never"
+        android:visible="true"/>
+    <item
+        android:id="@+id/agregar_conyuge_ingresos"
+        android:orderInCategory="5"
+        android:title="Agregar Conyuge G. Ingresos"
+        app:showAsAction="never"
+        android:visible="false"/>
+
+
+
+
+    <item
+        android:id="@+id/btn_monitor"
+        android:icon="@drawable/ic_monitor"
+        android:orderInCategory="2"
+        android:title="Monitor"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/btn_guardar"
+        android:icon="@drawable/ic_check"
+        android:orderInCategory="2"
+        android:title="Guardar Contacto"
+        android:tooltipText="Guardar Contacto"
+        app:showAsAction="always" />
+
+
+
+</menu>
