@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "134359983935",
+    "firebase_url": "https://scrumproject-47e87.firebaseio.com",
+    "project_id": "scrumproject-47e87",
+    "storage_bucket": "scrumproject-47e87.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:134359983935:android:f5543438b352a5e651158a",
+        "android_client_info": {
+          "package_name": "pe.com.hatunsol.hatunsolmovil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "134359983935-uv46b6k15v122jt9fnk2qh6ee58fa003.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "pe.com.hatunsol.hatunsolmovil",
+            "certificate_hash": "937c728d2863057bb181addb3d3a95f10631551a"
+          }
+        },
+        {
+          "client_id": "134359983935-rc2siqajqa4lmtti80rkg9lm4uea1v9e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtIzyLGvi3ycrQ7oh5TGEMaDjVVujDJaI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "134359983935-rc2siqajqa4lmtti80rkg9lm4uea1v9e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,7 +3,6 @@ package pe.com.hatunsol.hatunsolmovil.modules.encuestas.domain.usecase;
 import java.util.List;
 
 import pe.com.hatunsol.hatunsolmovil.base.UseCase;
-import pe.com.hatunsol.hatunsolmovil.modules.creditos.domain.usecase.GetCreditos;
 import pe.com.hatunsol.hatunsolmovil.modules.encuestas.data.source.EncuestasRepository;
 import pe.com.hatunsol.hatunsolmovil.modules.encuestas.data.source.remoto.IEncuestaRemotoDataSource;
 import pe.com.hatunsol.hatunsolmovil.modules.encuestas.entities.EncuestaUi;

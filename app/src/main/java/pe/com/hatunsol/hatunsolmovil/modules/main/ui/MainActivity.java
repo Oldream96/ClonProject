@@ -44,15 +44,8 @@ import pe.com.hatunsol.hatunsolmovil.base.UseCaseHandler;
 import pe.com.hatunsol.hatunsolmovil.base.UseCaseThreadPoolScheduler;
 import pe.com.hatunsol.hatunsolmovil.base.activity.BaseActivity;
 import pe.com.hatunsol.hatunsolmovil.base.fragment.BaseFragmentListener;
-import pe.com.hatunsol.hatunsolmovil.modules.afiliacion.ui.AfiliacionActivity;
-import pe.com.hatunsol.hatunsolmovil.modules.creditos.crearCreditos.ui.CrearCreditosActivity;
 import pe.com.hatunsol.hatunsolmovil.modules.SabadosProductivos.ui.SabadoProductivoFragment;
-import pe.com.hatunsol.hatunsolmovil.modules.creditos.dialogCambiarEstado.ui.CallbackCambioEstado;
-import pe.com.hatunsol.hatunsolmovil.modules.creditos.dialogEstados.ui.CallbackEstadoCredito;
-import pe.com.hatunsol.hatunsolmovil.modules.creditos.entities.ParametroUi;
-import pe.com.hatunsol.hatunsolmovil.modules.asistencia.asistenciamapa.ui.AsistenciaFragment;
-import pe.com.hatunsol.hatunsolmovil.modules.creditos.entities.PersonaUi;
-import pe.com.hatunsol.hatunsolmovil.modules.creditos.ui.CreditosFragment;
+
 import pe.com.hatunsol.hatunsolmovil.modules.encuestas.RevisarEncuesta.ui.RevisarEncuestaActivity;
 import pe.com.hatunsol.hatunsolmovil.modules.encuestas.ui.EncuestaFragment;
 import pe.com.hatunsol.hatunsolmovil.modules.login.presenter.LoginPresenter;
@@ -72,7 +65,7 @@ import pe.com.hatunsol.hatunsolmovil.services.entities.ProveedorLocal;
 import pe.com.hatunsol.hatunsolmovil.services.entities.SessionUser;
 import pe.com.hatunsol.hatunsolmovil.services.entities.Usuario;
 
-public class MainActivity extends BaseActivity<MainView, MainPresenter> implements MainView, BaseFragmentListener, CallbackEstadoCredito, CallbackCambioEstado {
+public class MainActivity extends BaseActivity<MainView, MainPresenter> implements MainView, BaseFragmentListener {
 
     @BindView(R.id.drawer_layout)
     DrawerLayout drawerLayout;
@@ -98,8 +91,6 @@ public class MainActivity extends BaseActivity<MainView, MainPresenter> implemen
     private int Opcion = 0;
     //private TextView tvNombre, tvCargoNombre, tvEstablecimiento;
     private Persona persona;
-    private PersonaUi personaUi;
-    List<PersonaUi> personaUis = new ArrayList<>();
     List<Persona> personaList = new ArrayList<>();
 
     @Override
@@ -219,9 +210,9 @@ public class MainActivity extends BaseActivity<MainView, MainPresenter> implemen
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        CreditosFragment fragment = new CreditosFragment();
-        fragmentTransaction.replace(R.id.frameLayout, fragment);
-        fragmentTransaction.commit();
+//        CreditosFragment fragment = new CreditosFragment();
+//        fragmentTransaction.replace(R.id.frameLayout, fragment);
+//        fragmentTransaction.commit();
     }
 
     @Override
@@ -229,9 +220,9 @@ public class MainActivity extends BaseActivity<MainView, MainPresenter> implemen
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        AsistenciaFragment fragment = new AsistenciaFragment();
-        fragmentTransaction.replace(R.id.frameLayout, fragment);
-        fragmentTransaction.commit();
+//        AsistenciaFragment fragment = new AsistenciaFragment();
+//        fragmentTransaction.replace(R.id.frameLayout, fragment);
+//        fragmentTransaction.commit();
     }
 
     @Override
@@ -252,11 +243,11 @@ public class MainActivity extends BaseActivity<MainView, MainPresenter> implemen
 
     @Override
     public void showInitCreditosFragment() {
-        Fragment fragment = CreditosFragment.newInstance();
+        Fragment fragment = SabadoProductivoFragment.newInstance();
         fragment.setArguments(getIntent().getExtras());
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.frameLayout, fragment, "tag-compromisos")
+                .replace(R.id.frameLayout, fragment, "tag-compromisos")
                 .commitNow();
     }
 
@@ -270,15 +261,16 @@ public class MainActivity extends BaseActivity<MainView, MainPresenter> implemen
             tvCargoNombre = headerLayout.findViewById(R.id.tvCargoCurrentUsuario);
             tvCargoNombre.setText(usuario.getCargoNombre());
             imageUsuario = headerLayout.findViewById(R.id.imageview);
-            if (!SessionUser.getCurrentUser().getFoto().equals("")) {
-
-                Picasso.with(getActivity())
-                        .load(SessionUser.getCurrentUser().getFoto())
-                        .transform(new CircleTransform())
-                        .placeholder(R.drawable.hatun_logo_light)
-                        .into(imageUsuario);
-
-            } else Picasso.with(getActivity())
+//            if (!SessionUser.getCurrentUser().getFoto().equals("")) {
+//
+//                Picasso.with(getActivity())
+//                        .load(SessionUser.getCurrentUser().getFoto())
+//                        .transform(new CircleTransform())
+//                        .placeholder(R.drawable.hatun_logo_light)
+//                        .into(imageUsuario);
+//
+//            } else
+            Picasso.with(getActivity())
                     .load(R.drawable.hatun_logo_light)
                     .transform(new CircleTransform())
                     .placeholder(R.drawable.hatun_logo_light)
@@ -325,9 +317,9 @@ public class MainActivity extends BaseActivity<MainView, MainPresenter> implemen
 
 
     private void onInitActivityCrearCredito() {
-        Intent intent = new Intent(getActivity(), CrearCreditosActivity.class);
-        intent.putExtra("EditarActivity", 0);
-        startActivity(intent);
+//        Intent intent = new Intent(getActivity(), CrearCreditosActivity.class);
+//        intent.putExtra("EditarActivity", 0);
+//        startActivity(intent);
     }
 
     private void onInitActivityRevisarEncuesta() {
@@ -336,12 +328,6 @@ public class MainActivity extends BaseActivity<MainView, MainPresenter> implemen
         startActivity(intent);
     }
 
-    @Override
-    public void filterCreditos(ParametroUi parametroUi) {
-        CreditosFragment creditosFragment = getFragment(CreditosFragment.class);
-        if (creditosFragment == null) return;
-        creditosFragment.filtrarCreditos(parametroUi);
-    }
 
     public void VerificarPermisos() {
         permission_GPS = ContextCompat.checkSelfPermission(MainActivity.this, android.Manifest.permission.ACCESS_FINE_LOCATION);
@@ -407,52 +393,30 @@ public class MainActivity extends BaseActivity<MainView, MainPresenter> implemen
     }
 
     @Override
-    public void CambioEstado() {
-
-        CreditosFragment creditosFragment = getFragment(CreditosFragment.class);
-        if (creditosFragment == null) return;
-        creditosFragment.CambioEstado();
-//        Persona persona = new Persona();
-//        int expedienteCreditoId=persona.getExpedienteCreditoId();
-//        int personaid=persona.getPersonaId();
-//        int nextProceso=persona.getEstadoProcesoId();
-//
-//        persona.setExpedienteCreditoId(expedienteCreditoId);
-//        persona.setEstadoProcesoId(nextProceso);
-//        persona.setPersonaId(personaid);
-//        creditosFragment.showDialogAceptar(expedienteCreditoId,personaid,nextProceso);
-
-    }
-
-    @Override
     public void onBackPressed() {
-        List<Fragment> list = getSupportFragmentManager().getFragments();
-        for (Fragment fragment : list) {
-            if (fragment instanceof CreditosFragment) {
-                if (!onComprobateFragment()) super.onBackPressed();
-                else onBackPresedCreditos();
-            } else {
-                onFragmentInitCreditos();
-            }
-        }
+        super.onBackPressed();
+//        List<Fragment> list = getSupportFragmentManager().getFragments();
+//        for (Fragment fragment : list) {
+//            if (fragment instanceof CreditosFragment) {
+//                if (!onComprobateFragment())
+//                else onBackPresedCreditos();
+//            } else {
+//                onFragmentInitCreditos();
+//            }
+//        }
 
     }
 
     public void onBackPresedCreditos() {
-        CreditosFragment creditosFragment = getFragment(CreditosFragment.class);
-        creditosFragment.onBackPresed();
+//        CreditosFragment creditosFragment = getFragment(CreditosFragment.class);
+//        creditosFragment.onBackPresed();
     }
 
-    public boolean onComprobateFragment() {
-        CreditosFragment creditosFragment = getFragment(CreditosFragment.class);
-        if (creditosFragment == null) return false;
-        return creditosFragment.getStateFilter();
-    }
 
     @Override
     public void onActivityInitAfiliacion() {
-        Intent intent = new Intent(getActivity(), AfiliacionActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(getActivity(), AfiliacionActivity.class);
+//        startActivity(intent);
     }
 
     public void ValidarAccesos() {

@@ -319,4 +319,13 @@
     <style name="spinnerItemStyle" parent="android:Widget.TextView.SpinnerItem"></style>
 
     <style name="spinnerDropDownItemStyle" parent="android:TextAppearance.Widget.TextView.SpinnerItem"></style>
+    <style name="TextLabel" parent="TextAppearance.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@color/half_black</item>
+        <item name="android:textSize">20sp</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">@color/half_black</item>
+        <item name="colorControlNormal">@color/half_black</item>
+        <item name="colorControlActivated">@color/half_black</item>
+    </style>
 </resources>

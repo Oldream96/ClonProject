@@ -2,27 +2,7 @@ package pe.com.hatunsol.hatunsolmovil.api.service;
 
 import java.util.List;
 
-import pe.com.hatunsol.hatunsolmovil.modules.afiliacion.entities.ResponseAfiliacion;
-import pe.com.hatunsol.hatunsolmovil.modules.afiliacion.entities.ResponseAgencia;
-import pe.com.hatunsol.hatunsolmovil.modules.afiliacion.entities.ResponseDeleteDocuProveedor;
-import pe.com.hatunsol.hatunsolmovil.modules.afiliacion.entities.ResponseDeletePerfil;
-import pe.com.hatunsol.hatunsolmovil.modules.afiliacion.entities.ResponseLocal;
-import pe.com.hatunsol.hatunsolmovil.modules.afiliacion.entities.ResponseObservacion;
-import pe.com.hatunsol.hatunsolmovil.modules.afiliacion.entities.ResponseSaveDocuProveedor;
-import pe.com.hatunsol.hatunsolmovil.modules.afiliacion.entities.ResponseSavePhotoAgencia;
-import pe.com.hatunsol.hatunsolmovil.modules.afiliacion.entities.ResponseSavePhotoLocal;
-import pe.com.hatunsol.hatunsolmovil.modules.afiliacion.entities.ResponseSavePhotoProvLocal;
-import pe.com.hatunsol.hatunsolmovil.modules.afiliacion.entities.ResponseSupervisor;
-import pe.com.hatunsol.hatunsolmovil.modules.asistencia.entities.RequestActualizar;
-import pe.com.hatunsol.hatunsolmovil.modules.asistencia.entities.RequestActualizarSV;
-import pe.com.hatunsol.hatunsolmovil.modules.asistencia.entities.RequestFinalizar;
-import pe.com.hatunsol.hatunsolmovil.modules.asistencia.entities.ResponseAsistencia;
-import pe.com.hatunsol.hatunsolmovil.modules.asistencia.reporteasistencia.entities.ResponsePlanTrabajo;
-import pe.com.hatunsol.hatunsolmovil.modules.asistencia.reporteasistencia.entities.Responsereportesupervisor;
-import pe.com.hatunsol.hatunsolmovil.modules.creditos.entities.ResponseDeleteDocuCreditos;
-import pe.com.hatunsol.hatunsolmovil.modules.creditos.entities.ResponseSavePhotoCreditos;
-import pe.com.hatunsol.hatunsolmovil.modules.main.entities.ResponseEstablecimiento;
-import pe.com.hatunsol.hatunsolmovil.modules.creditos.entities.ResponseParameter;
+
 import pe.com.hatunsol.hatunsolmovil.services.entities.CheckListProveedor;
 import pe.com.hatunsol.hatunsolmovil.services.entities.Documento;
 import pe.com.hatunsol.hatunsolmovil.services.entities.Encuesta;
@@ -59,19 +39,7 @@ public interface Services {
     @GET("parametro.svc/Listar/{number}")
     Call<List<Parametro>> obtenerParametro(@Path("number") String number);
 
-    //Lista de Locales, Agencias y Ferreterias
-    @GET("ProveedorLocal.svc/Locales")
-    Call<ResponseAsistencia> obtenerProveedorLocal(@Query("cargoid") int cargoId, @Query("userid") int usuarioId, @Query("latitud")double latitud,@Query("longitud")double longitud);
 
-    @GET("Persona.svc/BuscarPersonas")
-    Call<List<Persona>> obtenerPersona(@Query("idsupervisor") int idsupervisor, @Query("DocumentoNum") String DocumentoNum, @Query("cargoid") int cargoid, @Query("codigousuario") int codigousuario,
-                                              @Query("TipoBusqueda") String TipoBusqueda, @Query("offset") int offset, @Query("EnObservacion") boolean EnObservacion, @Query("FechaActua") String FechaActua,
-                                              @Query("zonaid") int zonaid, @Query("localid") int localid);
-    @GET("Persona.svc/Persona/{dni}")
-    Call<ResponseParameter> onValidateDocumento(@Path("dni") String dni);
-
-    @GET("Persona.svc/Persona/{dni}")
-    Call<ResponseParameter> getConyugePerson(@Path("dni") String dni);
 
     @GET("ProveedorLocal.svc/ProveedorLocal")
     Call<List<ProveedorLocal>> obtenerEstablecimientos(@Query("cargoid") int cargoId, @Query("empleadoid") int empleadoId, @Query("localid") int localId,
@@ -132,58 +100,14 @@ public interface Services {
     @GET("encuesta.svc/ListarEncuestas")
     Call<List<Encuesta>> obtenerEncuesta(@Query("userid") int userid, @Query("cargoid") int cargoid, @Query("nombrecomercial") String nombrecomercial, @Query("mes") int mes, @Query("anio") int anio);
 
-    //ReportePlanTrabajo
-    @GET("PlanTrabajo.svc/Listar")
-    Call<ResponsePlanTrabajo> obtenerPlanTrabajoDetalle(@Query("userid") int userid, @Query("mes") int mes, @Query("anio") int anio, @Query("localid") int localid);
+
     @GET("encuesta.svc/Preguntas")
     Call<Encuesta> obtenerPreguntas(@Query("idencuesta") int idencuesta, @Query("idencuestausuario") int idencuestausuario);
         //
     @POST("encuesta.svc/Actualizar")
     Call<Encuesta> Actualizar(@Body Encuesta encuesta);
 
-    //ActualizarPlanTrabajo
-    @POST("PlanTrabajo.svc/Actualizar")
-    Call<RequestActualizar> ActualizarPlanTrabajo(@Body RequestActualizar planTrabajoDetalle);
 
-    //FinalizarPlanTrabajo
-    @POST("PlanTrabajo.svc/ActualizarTermino")
-    Call<Integer> FinalizarPlanTrabajo(@Body RequestFinalizar requestActualizarfinalizar);
-
-    //ActualizarPlanTrabajoSegundaVez
-    @POST("PlanTrabajo.svc/ActualizarSegundaVez")
-    Call<RequestActualizarSV> ActualizarPlanTrabajoSegundavez(@Body RequestActualizarSV requestActualizarsegundavez);
-
-    //Supervisor
-    @GET("Supervisor.svc/ListarEmpleadosLocal")
-    Call<Responsereportesupervisor> ObtenerSupervisores(@Query("LocalId") String LocalId, @Query("Nombre") String Nombre, @Query("ZonaId") int ZonaId);
-
-    /* ====================
-       MODULO AFILIACIÓN
-       ================= */
-
-    /*===== BUSQUEDA =====*/
-
-    @GET("Proveedor.svc/Proveedor")
-    Call<ResponseAfiliacion> obtenerProveedores(@Query("cargoid") int cargoId, @Query("empleadoid") int empleadoId, @Query("zonaid") int zonaId , @Query("localid") int localId,
-                                                @Query("nombreproveedor") String nombreProveedor, @Query("Filtro") int filtro, @Query("OFFSET") int offset);
-
-    @GET("Local.svc/Local")
-    Call<ResponseLocal> obtenerLocales(@Query("Nombre") String nombre);
-
-    @GET("Oficina.svc/Oficina")
-    Call<ResponseAgencia> obtenerAgencias(@Query("Nombre") String nombre);
-
-    @POST("DocumentoAdjunto.svc/UploadPhotoLocal")
-    Call<ResponseSavePhotoLocal> onSavePhotoLocal(@Body Documento documento);
-
-    @POST("DocumentoAdjunto.svc/UploadPhotoOficina")
-    Call<ResponseSavePhotoAgencia> onSavePhotoAgencia(@Body Documento documento);
-
-    @GET("Local.svc/EliminarPerfil")
-    Call<ResponseDeletePerfil> onEliminarPhotoLocal(@Query("IdLocal") int localId);
-
-    @GET("Oficina.svc/EliminarPerfil")
-    Call<ResponseDeletePerfil> onEliminarPhotoAgencia(@Query("IdOficina") int oficinaId);
 
     /*===== AFILIACION PROVEEDOR =====*/
 
@@ -203,25 +127,12 @@ public interface Services {
     @POST("ProveedorLocal.svc/ActualizarProveedor")
     Call<ProveedorLocal> onSaveProveedor(@Body ProveedorLocal proveedorLocal);
 
-    @POST("DocumentoAdjuntoProveedor.svc/UploadArchivo")
-    Call<ResponseSaveDocuProveedor> onSaveDocumentoProveedor(@Body Documento documento);
-
-    @GET("DocumentoAdjuntoProveedor.svc/Eliminar")
-    Call<ResponseDeleteDocuProveedor> onEliminarDocumentoProveedor(@Query("AdjuntoId") int adjuntoId);
-
-    @POST("DocumentoAdjuntoProveedor.svc/UploadPhoto")
-    Call<ResponseSavePhotoProvLocal> onSavePhotoProveedorLocal(@Body Documento documento);
-
-    @GET("DocumentoAdjuntoProveedor.svc/EliminarPerfil")
-    Call<ResponseDeletePerfil> onEliminarPhotoProveedorLocal(@Query("ProveedorLocalId") int proveedorLocalId);
 
     /*===== AFILIACION PROVEEDOR LOCAL =====*/
 
     @GET("ProveedorLocal.svc/Obtener")
     Call<ProveedorLocal> obtenerProveedorLocal(@Query("proveedorlocalid") int proveedorlocalid);
 
-    @GET("Supervisor.svc/Supervisor")
-    Call<ResponseSupervisor> obtenerSupervisores(@Query("LocalId") int localid);
 
     @POST("ProveedorLocal.svc/ActualizarProveedorLocal")
     Call<ProveedorLocal> onSaveProveedorLocal(@Body ProveedorLocal proveedorLocal);
@@ -251,9 +162,5 @@ public interface Services {
     @GET("DocumentoAdjunto.svc/Documento")
     Call<List<Documento>> obtenerDocumentosCredito(@Query("ExpedienteCreditoId") int ExpedienteCreditoId);
 
-    @GET("DocumentoAdjunto.svc/Eliminar")
-    Call<ResponseDeleteDocuCreditos> onEliminarDocumentoCreditos(@Query("AdjuntoId") int adjuntoId);
 
-    @POST("DocumentoAdjunto.svc/FileUpload")
-    Call<ResponseSavePhotoCreditos> onSavePhotoCreditos(@Body Documento documento);
 }

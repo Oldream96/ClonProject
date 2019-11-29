@@ -10,9 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import pe.com.hatunsol.hatunsolmovil.R;
-import pe.com.hatunsol.hatunsolmovil.modules.creditos.adapter.CreditosHolder;
-import pe.com.hatunsol.hatunsolmovil.modules.creditos.entities.PersonaUi;
-import pe.com.hatunsol.hatunsolmovil.modules.creditos.listener.CreditosListener;
 import pe.com.hatunsol.hatunsolmovil.modules.encuestas.entities.EncuestaUi;
 import pe.com.hatunsol.hatunsolmovil.modules.encuestas.listener.EncuestaListener;
 import pe.com.hatunsol.hatunsolmovil.services.entities.Encuesta;

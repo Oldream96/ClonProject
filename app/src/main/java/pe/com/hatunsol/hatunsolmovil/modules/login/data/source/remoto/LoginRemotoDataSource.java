@@ -160,25 +160,25 @@ public class LoginRemotoDataSource implements RemotoDataSourceInterface {
 
     @Override
     public void sincronizarDataPersonas(Usuario usuario, Callback<List<Persona>> callback) {
-        services = ApiUtils.getService();
-        Call<List<Persona>> call = services.obtenerPersona(usuario.getIdSupervisor(), "",usuario.getCargoId(),
-                usuario.getCodigoUsuario(), String.valueOf(2), 0, true, "", usuario.getZonaId(), usuario.getLocalId());
-        call.enqueue(new retrofit2.Callback<List<Persona>>() {
-            @Override
-            public void onResponse(Call<List<Persona>> call, Response<List<Persona>> response) {
-                if (response!=null){
-                    List<Persona> personaList = response.body();
-                    callback.load(true, personaList);
-                }else{
-                    callback.load(false, null);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Persona>> call, Throwable t) {
-                t.printStackTrace();
-            }
-        });
+//        services = ApiUtils.getService();
+//        Call<List<Persona>> call = services.obtenerPersona(usuario.getIdSupervisor(), "",usuario.getCargoId(),
+//                usuario.getCodigoUsuario(), String.valueOf(2), 0, true, "", usuario.getZonaId(), usuario.getLocalId());
+//        call.enqueue(new retrofit2.Callback<List<Persona>>() {
+//            @Override
+//            public void onResponse(Call<List<Persona>> call, Response<List<Persona>> response) {
+//                if (response!=null){
+//                    List<Persona> personaList = response.body();
+//                    callback.load(true, personaList);
+//                }else{
+//                    callback.load(false, null);
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<Persona>> call, Throwable t) {
+//                t.printStackTrace();
+//            }
+//        });
     }
 
 

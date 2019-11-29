@@ -41,7 +41,6 @@ import pe.com.hatunsol.hatunsolmovil.modules.SabadosProductivos.dialogCompromiso
 import pe.com.hatunsol.hatunsolmovil.modules.SabadosProductivos.domain.GetCompromisos;
 import pe.com.hatunsol.hatunsolmovil.modules.SabadosProductivos.domain.GetUsuario;
 import pe.com.hatunsol.hatunsolmovil.modules.SabadosProductivos.entities.ProveedorLocalUi;
-import pe.com.hatunsol.hatunsolmovil.modules.creditos.dialogEstados.ui.DialogFragmentEstado;
 import pe.com.hatunsol.hatunsolmovil.services.entities.Usuario;
 
 public class DialogFragmentTipoCompromiso extends BaseDialogFragment<TipoCompromisoView, TipoCompromisoPresenter, TipoCompromisoListener> implements TipoCompromisoView, TipoCompromisoListener, View.OnClickListener {

@@ -16,6 +16,7 @@ import java.util.TimerTask;
 
 import pe.com.hatunsol.hatunsolmovil.R;
 import pe.com.hatunsol.hatunsolmovil.base.activity.BaseActivity;
+import pe.com.hatunsol.hatunsolmovil.modules.login.ui.ActivityLogin;
 import pe.com.hatunsol.hatunsolmovil.modules.login.ui.LoginActivity;
 import pe.com.hatunsol.hatunsolmovil.modules.main.ui.MainActivity;
 import pe.com.hatunsol.hatunsolmovil.modules.splash.presenter.SplashPresenter;
@@ -38,7 +39,7 @@ public class SplashActivity extends Activity {
             @Override
             public void run() {
                 // Start the next activity
-                Intent mainIntent = new Intent().setClass(SplashActivity.this, MainActivity.class);
+                Intent mainIntent = new Intent().setClass(SplashActivity.this, ActivityLogin.class);
                 //Intent mainIntent = new Intent().setClass(SplashScreenActivity.this, MainActivity3.class);
                 startActivity(mainIntent);
                 // Close the activity so the user won't able to go back this

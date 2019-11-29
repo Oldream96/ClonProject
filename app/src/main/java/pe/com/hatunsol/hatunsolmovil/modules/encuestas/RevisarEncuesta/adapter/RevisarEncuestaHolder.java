@@ -19,7 +19,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pe.com.hatunsol.hatunsolmovil.R;
-import pe.com.hatunsol.hatunsolmovil.modules.creditos.crearCreditos.adjuntoFragment.AdjuntoPresenterImpl;
 import pe.com.hatunsol.hatunsolmovil.modules.encuestas.RevisarEncuesta.listener.PreguntaListener;
 import pe.com.hatunsol.hatunsolmovil.services.entities.BE_Constantes;
 import pe.com.hatunsol.hatunsolmovil.services.entities.Pregunta;

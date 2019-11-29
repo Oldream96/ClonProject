@@ -25,14 +25,16 @@ public class LoginLocalDataSource implements LocalDataSourceInterface {
 
         SessionUser sessionUser = new SessionUser();
         sessionUser.setNombrePersona(usuario.getEmpleadoNombre());
-        sessionUser.setPersonaId(usuario.getEmpleadoId());
-        sessionUser.setUsuarioId(usuario.getCodigoUsuario());
+        sessionUser.setPersonaId(1);
+        if (usuario.getCargoNombre().equals("Administrador"))
+        sessionUser.setUsuarioId(1);
+        else sessionUser.setUsuarioId(2);
         sessionUser.setState(true);
-        sessionUser.setCargoId(usuario.getCargoId());
-        sessionUser.setLocalId(usuario.getLocalId());
-        sessionUser.setZonaId(usuario.getZonaId());
+        sessionUser.setCargoId(1);
+        sessionUser.setLocalId(1);
+        sessionUser.setZonaId(1);
         sessionUser.setFoto(usuario.getFoto());
-        sessionUser.setEmpleadoId(usuario.getEmpleadoId());
+        sessionUser.setEmpleadoId(1);
         sessionUser.save();
         usuario.save();
         return true;

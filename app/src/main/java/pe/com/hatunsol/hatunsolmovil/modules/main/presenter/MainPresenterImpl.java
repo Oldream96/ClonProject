@@ -1,6 +1,7 @@
 package pe.com.hatunsol.hatunsolmovil.modules.main.presenter;
 
 import android.content.res.Resources;
+import android.os.Bundle;
 
 import androidx.core.app.NotificationCompatSideChannelService;
 
@@ -23,7 +24,29 @@ public class MainPresenterImpl extends BasePresenterImpl<MainView> implements Ma
     private SincronizeEstablecimientos sincronizeEstablecimientos;
     private GetUser getUser;
     private Usuario usuario;
+    private Usuario usuario2;
     private DeleteUser deleteUser;
+    private String nombre;
+    private String correo;
+    private String tipousuario;
+
+    @Override
+    public void setExtras(Bundle extras) {
+        super.setExtras(extras);
+        this.nombre = extras.getString("nombre");
+        this.correo = extras.getString("correo");
+        this.tipousuario = extras.getString("tipousuario");
+        usuario2 = new Usuario();
+        usuario2.setCargoNombre("Cliente");
+        usuario2.setEmpleadoNombre("administrador");
+        usuario2.setLogin("administrador");
+    }
+
+    @Override
+    public Bundle getExtras() {
+        return super.getExtras();
+
+    }
 
     //Casos de uso a usar en la actividad o fragment
     public MainPresenterImpl(UseCaseHandler handler, Resources res, SincronizeEstablecimientos sincronizeEstablecimientos, GetUser getUser, DeleteUser deleteUser) {
@@ -48,17 +71,18 @@ public class MainPresenterImpl extends BasePresenterImpl<MainView> implements Ma
             if (view != null) view.close();
             return;
         }
-        setUser();
-        sincronizeEstablecimientos();
+        view.showUserInformation(usuario2);
+        //setUser();
+        //sincronizeEstablecimientos();
 
-        if (view != null) {
-            if (sessionUser.getCargoId() != BE_Constantes.TipoUsuarios.JefedeMarca)
-                view.showInitCreditosFragment();
-            else {
-                view.onFragmentInitEncuestas();
-                view.onActivityInitAfiliacion();
-            }
-        }
+//        if (view != null) {
+//            if (sessionUser.getCargoId() != BE_Constantes.TipoUsuarios.JefedeMarca)
+//                view.showInitCreditosFragment();
+//            else {
+//                view.onFragmentInitEncuestas();
+//                view.onActivityInitAfiliacion();
+//            }
+//        }
     }
 
     @Override

@@ -10,7 +10,6 @@ import java.util.List;
 import pe.com.hatunsol.hatunsolmovil.api.service.ApiUtils;
 import pe.com.hatunsol.hatunsolmovil.api.service.Services;
 import pe.com.hatunsol.hatunsolmovil.lib.AppDatabase;
-import pe.com.hatunsol.hatunsolmovil.modules.creditos.entities.PersonaUi;
 import pe.com.hatunsol.hatunsolmovil.modules.encuestas.entities.EncuestaUi;
 import pe.com.hatunsol.hatunsolmovil.modules.encuestas.entities.PreguntaUi;
 import pe.com.hatunsol.hatunsolmovil.services.entities.Encuesta;

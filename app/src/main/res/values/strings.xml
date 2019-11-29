@@ -187,4 +187,7 @@
         <item>1</item>
         <item>0</item>
     </string-array>
+    <string name="facebook_app_id">2495594834096170</string> <string name="fb_login_protocol_scheme">fb688769184981117</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">[ACCOUNT_KIT_CLIENT_TOKEN]</string>
+    <string name="FACEBOOK_APP_ID">2495594834096170</string>
 </resources>
