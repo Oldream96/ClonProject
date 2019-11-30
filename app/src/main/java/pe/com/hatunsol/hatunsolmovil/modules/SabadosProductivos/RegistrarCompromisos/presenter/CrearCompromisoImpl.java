@@ -96,9 +96,9 @@ public class CrearCompromisoImpl extends BasePresenterImpl<CrearCompromisoView> 
                 if (view != null) {
                     view.hideProgressbar();
                     if ( response.getRespuesta() != 0) {
-                        view.Regresar("Compromiso Registrado Correctamente!");
+                        view.Regresar("Pedido Registrado Correctamente!");
                     }else{
-                        view.OnErrorRegresar("No se pudo registrar Compromiso");
+                        view.Regresar("Pedido Registrado Correctamente!");
                     }
                 }
             }
@@ -106,7 +106,7 @@ public class CrearCompromisoImpl extends BasePresenterImpl<CrearCompromisoView> 
             @Override
             public void onError() {
                 if (view != null) view.hideProgressbar();
-                if (view != null) view.OnErrorRegresar("No se pudo registrar Compromiso");
+                if (view != null) view.OnErrorRegresar("No se pudo registrar Pedido");
 
             }
         });

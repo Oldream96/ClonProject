@@ -164,9 +164,12 @@ public interface Services {
 
 
 
-    //compromisos
+    //Pedidos
     @GET("prueba.svc/obtener")
     Call<List<Persona>> obtenerpedidos(@Query("Tipousuario") int idsupervisor, @Query("nombre") String nombre);
+
+    @POST("prueba.svc/Guardar")
+    Call<Integer> onsavePedido(@Body List<Persona> listaCompromisos);
 
 
 }

@@ -41,7 +41,7 @@ public class SPRemotoDataSource implements SPRemotoDataSourceInterface {
                                  for (Persona proveedorLocal : proveedorLocals) {
                                      ProveedorLocalUi proveedorLocalUi = new ProveedorLocalUi();
                                      proveedorLocalUi.setNombreProveedor(proveedorLocal.getNombreCompleto());
-                                     proveedorLocalUi.setFecha("30/11/2019");
+                                     proveedorLocalUi.setFecha(proveedorLocal.getFechaCreacion());
                                      proveedorLocalUi.setUsuario(proveedorLocal.getCentroTrabajo());
                                      proveedorLocalUiList.add(proveedorLocalUi);
 
@@ -219,13 +219,7 @@ public class SPRemotoDataSource implements SPRemotoDataSourceInterface {
         String listaFerreteria = gson.toJson(DetalleCompromiso);
         services = ApiUtils.getService();
         Call<Integer> call = null;
-        if (tipoCompromiso == 1) {
-            call = services.onSaveFerreteriaCompromiso(DetalleCompromiso);
-        } else if (tipoCompromiso == 2){
-            call = services.onSaveDerivadosCompromiso(DetalleCompromiso);
-        } else if(tipoCompromiso == 3){
-            call = services.onSaveActivadosCompromiso(DetalleCompromiso);
-        }
+            call = services.onsavePedido(DetalleCompromiso);
             String calls = call.request().toString();
         Log.d("call", calls);
         call.enqueue(new retrofit2.Callback<Integer>() {

@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -63,6 +64,12 @@ public class CrearCompromisosActivity extends BaseActivity<CrearCompromisoView, 
 
     @BindView(R.id.toolbarCompromisos)
     Toolbar toolbar;
+
+    @BindView(R.id.edt_pedidotitulo)
+    EditText edt_pedidotitulo;
+    @BindView(R.id.edt_PedidoDrescrip)
+    EditText edt_PedidoDrescrip;
+
 
     private FerreteriaCompromisoAdapter adapter;
     private FerreteriaCompromisoListener listener;
@@ -251,12 +258,12 @@ public class CrearCompromisosActivity extends BaseActivity<CrearCompromisoView, 
         FragmentManager fm = getFragmentManager();
         if (fm.getBackStackEntryCount() > 0) {
             //Log.i("MainActivity", "popping backstack");
-            hideKeyboard(null,this);
+            hideKeyboard(null, this);
             fm.popBackStack();
         } else {
             //Log.i("MainActivity", "nothing on backstack, calling super");
             fm.popBackStack();
-            hideKeyboard(null,this);
+            hideKeyboard(null, this);
             super.onBackPressed();
         }
     }
@@ -275,38 +282,30 @@ public class CrearCompromisosActivity extends BaseActivity<CrearCompromisoView, 
     public void OnClick(View view) {
         switch (view.getId()) {
             case R.id.btguardar_ferrcompromiso:
-                if (!(adapter.proveedorLocalUiList == null || adapter.proveedorLocalUiList.size() == 0))
-                    setCompromisoFerreteria();
+                //if (!(adapter.proveedorLocalUiList == null || adapter.proveedorLocalUiList.size() == 0))
+                setCompromisoFerreteria();
                 break;
         }
     }
 
     private void setCompromisoFerreteria() {
-        proveedorLocalUiList = adapter.proveedorLocalUiList;
-        if (proveedorLocalUiList == null || proveedorLocalUiList.size() == 0) return;
-        botonguardar.setEnabled(false);
+        //proveedorLocalUiList = adapter.proveedorLocalUiList;
+        //if (proveedorLocalUiList == null || proveedorLocalUiList.size() == 0) return;
+        //botonguardar.setEnabled(false);
         try {
             if (ValidarDatosBasicos()) {
-                for (int i = 0; i < proveedorLocalUiList.size(); i++) {
-                    if (proveedorLocalUiList.get(i).getStatus() == 2) {
-                        Persona persona = new Persona();
-                        persona.setAccion(proveedorLocalUiList.get(i).getAccion());
-                        persona.setRazon(proveedorLocalUiList.get(i).getRazon());
-                        persona.setTipoPersonaId(proveedorLocalUiList.get(i).getTipo());
-                        persona.setIdSupervisor(SessionUser.getCurrentUser().getPersonaId());
-                        SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd");
-                        persona.setFechaCreacion(df.format(fecha));
-                        persona.setProveedorLocalId(proveedorLocalUiList.get(i).getProveedorLocalId());
-                        persona.setCodigoUsuarioCreacion(SessionUser.getCurrentUser().getUsuarioId());
-                        personaList.add(persona);
-                    }
-                }
-                if (personaList.size() != 0) {
-                    presenter.onSaveDetalleCompromiso(personaList, this.tipoCompromiso);
-                } else {
-                    Toast.makeText(getActivity(), "Ningún campo llenado para guardar", Toast.LENGTH_SHORT).show();
-                    if (!botonguardar.isEnabled()) botonguardar.setEnabled(true);
-                }
+                Date hoy = new Date();
+                Persona persona = new Persona();
+                persona.setIdSupervisor(SessionUser.getCurrentUser().getUsuarioId());
+                persona.setNombreCompleto(SessionUser.getCurrentUser().getNombrePersona());
+                persona.setCodigoUsuarioCreacion(SessionUser.getCurrentUser().getUsuarioId());
+                persona.setCentroTrabajo(edt_pedidotitulo.getText().toString());
+                persona.setObra(edt_PedidoDrescrip.getText().toString());
+                SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd");
+                persona.setFechaCreacion(df.format(hoy));
+                personaList.add(persona);
+                presenter.onSaveDetalleCompromiso(personaList, this.tipoCompromiso);
+
             } else {
                 Toast.makeText(getActivity(), "Complete todos los campos", Toast.LENGTH_SHORT).show();
                 if (!botonguardar.isEnabled()) botonguardar.setEnabled(true);
@@ -319,27 +318,9 @@ public class CrearCompromisosActivity extends BaseActivity<CrearCompromisoView, 
 
     private boolean ValidarDatosBasicos() {
         boolean correcto = true;
-        for (int i = 0; i < proveedorLocalUiList.size(); i++) {
-            //Persona
-            this.tipoCompromiso = proveedorLocalUiList.get(i).getTipo();
-            if (proveedorLocalUiList.get(i).getTipo() != 1) {
-                if ((proveedorLocalUiList.get(i).getAccion() == null ||
-                        proveedorLocalUiList.get(i).getAccion().equals(""))
-                        && proveedorLocalUiList.get(i).getStatus() == 2) {
-                    correcto = false;
-                }
-            } else {
-                //Ferretería tiene que tener ambos obligatorio
-                if ((proveedorLocalUiList.get(i).getAccion() == null ||
-                        proveedorLocalUiList.get(i).getAccion().equals("") ||
-                        proveedorLocalUiList.get(i).getAccion() == null ||
-                        proveedorLocalUiList.get(i).getRazon().equals("")
-                )) {
-                    correcto = false;
-                }
-            }
-        }
 
+        if (edt_PedidoDrescrip.getText().toString().equals("") || edt_pedidotitulo.getText().toString().equals(""))
+            correcto = false;
         return correcto;
 
     }
