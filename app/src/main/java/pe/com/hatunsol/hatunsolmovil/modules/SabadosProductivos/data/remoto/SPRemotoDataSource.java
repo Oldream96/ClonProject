@@ -27,14 +27,10 @@ public class SPRemotoDataSource implements SPRemotoDataSourceInterface {
 
 
     @Override
-    public void getCompromisos(int idsupervisor, int mes, int anio, Callback<List<ProveedorLocalUi>> listCallback) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-        Date date = new Date();
-
-        String fecha = dateFormat.format(date);
+    public void getCompromisos(int idsupervisor, String nombreusuario, Callback<List<ProveedorLocalUi>> listCallback) {
         services = ApiUtils.getService();
 
-        Call<List<Persona>> call = services.obtenerCompromisos(idsupervisor, mes, anio);
+        Call<List<Persona>> call = services.obtenerpedidos(2, nombreusuario);
         call.enqueue(new retrofit2.Callback<List<Persona>>() {
                          @Override
                          public void onResponse(Call<List<Persona>> call, Response<List<Persona>> response) {
@@ -44,9 +40,9 @@ public class SPRemotoDataSource implements SPRemotoDataSourceInterface {
 
                                  for (Persona proveedorLocal : proveedorLocals) {
                                      ProveedorLocalUi proveedorLocalUi = new ProveedorLocalUi();
-                                     proveedorLocalUi.setNombreProveedor(proveedorLocal.getNombre());
-                                     proveedorLocalUi.setFecha(proveedorLocal.getFechaCreacion());
-                                     proveedorLocalUi.setUsuario(proveedorLocal.getSupervisor());
+                                     proveedorLocalUi.setNombreProveedor(proveedorLocal.getNombreCompleto());
+                                     proveedorLocalUi.setFecha("30/11/2019");
+                                     proveedorLocalUi.setUsuario(proveedorLocal.getCentroTrabajo());
                                      proveedorLocalUiList.add(proveedorLocalUi);
 
                                  }

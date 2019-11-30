@@ -21,7 +21,7 @@
         <item
             android:id="@+id/nav_compromisos_fragment"
             android:icon="@drawable/vector_reporte_asistencia"
-            android:title="Sabados Productivos" />
+            android:title="Lista de Pedidos" />
     </group>
     <item android:title="Opciones">
         <menu>

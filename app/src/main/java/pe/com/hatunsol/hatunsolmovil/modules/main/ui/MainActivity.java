@@ -49,6 +49,7 @@ import pe.com.hatunsol.hatunsolmovil.modules.SabadosProductivos.ui.SabadoProduct
 import pe.com.hatunsol.hatunsolmovil.modules.encuestas.RevisarEncuesta.ui.RevisarEncuestaActivity;
 import pe.com.hatunsol.hatunsolmovil.modules.encuestas.ui.EncuestaFragment;
 import pe.com.hatunsol.hatunsolmovil.modules.login.presenter.LoginPresenter;
+import pe.com.hatunsol.hatunsolmovil.modules.login.ui.ActivityLogin;
 import pe.com.hatunsol.hatunsolmovil.modules.login.ui.LoginActivity;
 import pe.com.hatunsol.hatunsolmovil.modules.login.ui.LoginView;
 import pe.com.hatunsol.hatunsolmovil.modules.main.data.source.MainRepository;
@@ -186,7 +187,7 @@ public class MainActivity extends BaseActivity<MainView, MainPresenter> implemen
 
     @Override
     public void starLoginActivity() {
-        Intent intent = new Intent(this, LoginActivity.class);
+        Intent intent = new Intent(this, ActivityLogin.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -255,26 +256,31 @@ public class MainActivity extends BaseActivity<MainView, MainPresenter> implemen
     @Override
     public void showUserInformation(Usuario usuario) {
         try {
+            SessionUser person = SessionUser.getCurrentUser();
             View headerLayout = navigationView.getHeaderView(0); // 0-index header
             tvNombre = headerLayout.findViewById(R.id.tvNombreCurrentUsuario);
-            tvNombre.setText(usuario.getEmpleadoNombre());
+            tvNombre.setText(person.getNombrePersona());
             tvCargoNombre = headerLayout.findViewById(R.id.tvCargoCurrentUsuario);
-            tvCargoNombre.setText(usuario.getCargoNombre());
+            if (person.getUsuarioId() == 1) tvCargoNombre.setText("Administrador");
+            else tvCargoNombre.setText("Cliente");
             imageUsuario = headerLayout.findViewById(R.id.imageview);
-//            if (!SessionUser.getCurrentUser().getFoto().equals("")) {
-//
-//                Picasso.with(getActivity())
-//                        .load(SessionUser.getCurrentUser().getFoto())
-//                        .transform(new CircleTransform())
-//                        .placeholder(R.drawable.hatun_logo_light)
-//                        .into(imageUsuario);
-//
-//            } else
-            Picasso.with(getActivity())
-                    .load(R.drawable.hatun_logo_light)
-                    .transform(new CircleTransform())
-                    .placeholder(R.drawable.hatun_logo_light)
-                    .into(imageUsuario);
+
+            try {
+                Picasso.with(getActivity())
+                        .load(SessionUser.getCurrentUser().getFoto())
+                        .transform(new CircleTransform())
+                        .placeholder(R.drawable.hatun_logo_light)
+                        .into(imageUsuario);
+
+            }catch (Exception e) {
+                Picasso.with(getActivity())
+                        .load(R.drawable.hatun_logo_light)
+                        .transform(new CircleTransform())
+                        .placeholder(R.drawable.hatun_logo_light)
+                        .into(imageUsuario);
+
+            }
+
             ValidarAccesos();
 
         } catch (Exception e) {
@@ -377,7 +383,7 @@ public class MainActivity extends BaseActivity<MainView, MainPresenter> implemen
 
     @Override
     public void onPhoneCall() {
-        String number = "988702085";
+        String number = "954024279";
         if (number.trim().length() > 0) {
             if (ContextCompat.checkSelfPermission(MainActivity.this,
                     Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
@@ -427,34 +433,12 @@ public class MainActivity extends BaseActivity<MainView, MainPresenter> implemen
         MenuItem item_sabados = nav_Menu.findItem(R.id.nav_compromisos_fragment);//modulo sabados productivos
         MenuItem item_encuestas = nav_Menu.findItem(R.id.nav_encuestas);//modulo encuestas
 
-        if (SessionUser.getCurrentUser().getCargoId() == BE_Constantes.TipoUsuarios.JefeZonal) {
-            //mostrara botones
-            item_creditos.setVisible(true);
-            item_asistencia.setVisible(true);
-            item_establecimientos.setVisible(true);
-            item_sabados.setVisible(true);
-            item_encuestas.setVisible(false);
-        } else if (SessionUser.getCurrentUser().getCargoId() == BE_Constantes.TipoUsuarios.JefedeMarca) {
-            //mostrara botones
-            item_asistencia.setVisible(true);
-            item_establecimientos.setVisible(true);
-            item_encuestas.setVisible(true);
-            item_creditos.setVisible(false);
-            item_sabados.setVisible(false);
-        } else if (SessionUser.getCurrentUser().getCargoId() == BE_Constantes.TipoUsuarios.Supervisor) {
-            item_creditos.setVisible(true);
-            item_asistencia.setVisible(true);
-            item_sabados.setVisible(true);
-            item_encuestas.setVisible(true);
-            item_establecimientos.setVisible(true);
-        } else if (SessionUser.getCurrentUser().getCargoId() == BE_Constantes.TipoUsuarios.ADO) {
-            //mostrara botones
-            item_creditos.setVisible(true);
-            item_asistencia.setVisible(true);
-            item_establecimientos.setVisible(false);
-            item_sabados.setVisible(false);
-            item_encuestas.setVisible(false);
-        } else {
-        }
+        //mostrara botones
+        item_creditos.setVisible(false);
+        item_asistencia.setVisible(false);
+        item_establecimientos.setVisible(false);
+        item_sabados.setVisible(true);
+        item_encuestas.setVisible(false);
+
     }
 }

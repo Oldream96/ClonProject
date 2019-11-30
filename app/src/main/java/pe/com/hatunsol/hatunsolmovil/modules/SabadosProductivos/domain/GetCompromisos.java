@@ -18,7 +18,7 @@ public class GetCompromisos extends UseCase<GetCompromisos.Request, GetCompromis
 
     @Override
     protected void executeUseCase(Request requestValues) {
-        repository.getCompromisos(requestValues.usuarioId, requestValues.mes, requestValues.anio, new SPRemotoDataSourceInterface.Callback<List<ProveedorLocalUi>>() {
+        repository.getCompromisos(requestValues.usuarioId, requestValues.nombreusuario, new SPRemotoDataSourceInterface.Callback<List<ProveedorLocalUi>>() {
             @Override
             public void load(boolean state, List<ProveedorLocalUi> item) {
                 getUseCaseCallback().onSuccess(new Response(item));
@@ -31,11 +31,13 @@ public class GetCompromisos extends UseCase<GetCompromisos.Request, GetCompromis
         private int usuarioId;
         private int mes;
         private int anio;
+        private String nombreusuario;
 
-        public Request(int usuarioId, int mes, int anio) {
+        public Request(int usuarioId, int mes, int anio,String nombreusuario) {
             this.usuarioId = usuarioId;
             this.mes = mes;
             this.anio = anio;
+            this.nombreusuario = nombreusuario;
         }
 
         public int getUsuarioId() {

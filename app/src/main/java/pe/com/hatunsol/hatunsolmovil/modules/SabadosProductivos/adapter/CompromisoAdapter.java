@@ -49,7 +49,7 @@ public class CompromisoAdapter extends RecyclerView.Adapter {
 
     public void setProveedorLocalUiList(List<ProveedorLocalUi> proveedorLocalUiList) {
         this.proveedorLocalUiList.clear();
-        //this.proveedorLocalUiList.addAll(proveedorLocalUiList);
-        //notifyDataSetChanged();
+        this.proveedorLocalUiList.addAll(proveedorLocalUiList);
+        notifyDataSetChanged();
     }
 }

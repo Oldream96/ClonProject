@@ -21,8 +21,8 @@ public class SabadoProductivoRepository implements SPRemotoDataSourceInterface, 
     }
 
     @Override
-    public void getCompromisos(int idsupervisor, int mes, int anio, SPRemotoDataSourceInterface.Callback<List<ProveedorLocalUi>> callback) {
-        spRemotoDataSource.getCompromisos(idsupervisor,mes,anio,callback);
+    public void getCompromisos(int idsupervisor, String nombreusuario, SPRemotoDataSourceInterface.Callback<List<ProveedorLocalUi>> callback) {
+        spRemotoDataSource.getCompromisos(idsupervisor,nombreusuario,callback);
     }
 
     @Override

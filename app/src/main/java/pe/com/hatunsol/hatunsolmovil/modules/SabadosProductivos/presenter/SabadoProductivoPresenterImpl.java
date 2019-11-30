@@ -12,6 +12,7 @@ import pe.com.hatunsol.hatunsolmovil.modules.SabadosProductivos.adapter.Compromi
 import pe.com.hatunsol.hatunsolmovil.modules.SabadosProductivos.domain.GetCompromisos;
 import pe.com.hatunsol.hatunsolmovil.modules.SabadosProductivos.ui.SabadoProductivoView;
 import pe.com.hatunsol.hatunsolmovil.modules.SabadosProductivos.domain.GetUsuario;
+import pe.com.hatunsol.hatunsolmovil.services.entities.SessionUser;
 import pe.com.hatunsol.hatunsolmovil.services.entities.Usuario;
 
 public class SabadoProductivoPresenterImpl extends BaseFragmentPresenterImpl<SabadoProductivoView> implements SabadoProductivoPresenter {
@@ -64,7 +65,7 @@ public class SabadoProductivoPresenterImpl extends BaseFragmentPresenterImpl<Sab
         Calendar cal = Calendar.getInstance();
         Date date = new Date();
         cal.setTime(date);
-        handler.execute(getCompromisos, new GetCompromisos.Request(usuario2.getEmpleadoId(), cal.get(Calendar.MONTH) + 1, cal.get(Calendar.YEAR)), new UseCase.UseCaseCallback<GetCompromisos.Response>() {
+        handler.execute(getCompromisos, new GetCompromisos.Request(SessionUser.getCurrentUser().getEmpleadoId(), 1,1,SessionUser.getCurrentUser().getNombrePersona()), new UseCase.UseCaseCallback<GetCompromisos.Response>() {
             @Override
             public void onSuccess(GetCompromisos.Response response) {
                 if (view != null) view.ShowCompromisos(response.getProveedorLocalUiList());

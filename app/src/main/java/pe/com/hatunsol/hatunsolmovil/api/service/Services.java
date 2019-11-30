@@ -163,4 +163,10 @@ public interface Services {
     Call<List<Documento>> obtenerDocumentosCredito(@Query("ExpedienteCreditoId") int ExpedienteCreditoId);
 
 
+
+    //compromisos
+    @GET("prueba.svc/obtener")
+    Call<List<Persona>> obtenerpedidos(@Query("Tipousuario") int idsupervisor, @Query("nombre") String nombre);
+
+
 }

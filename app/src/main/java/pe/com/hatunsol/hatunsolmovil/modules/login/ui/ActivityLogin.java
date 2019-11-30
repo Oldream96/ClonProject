@@ -38,12 +38,14 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.raizlabs.android.dbflow.config.FlowManager;
 
 import java.util.UUID;
 
 import pe.com.hatunsol.hatunsolmovil.R;
 import pe.com.hatunsol.hatunsolmovil.modules.login.domain.usecase.SaveSessionUser;
 import pe.com.hatunsol.hatunsolmovil.modules.main.ui.MainActivity;
+import pe.com.hatunsol.hatunsolmovil.services.entities.SessionUser;
 import pe.com.hatunsol.hatunsolmovil.services.entities.Usuario;
 
 
@@ -63,6 +65,7 @@ public class ActivityLogin extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login2);
+        FlowManager.init(this);
         user = findViewById(R.id.etLogin);
         password = findViewById(R.id.etpassword);
         btlogin = findViewById(R.id.btnLogin);
@@ -175,7 +178,7 @@ public class ActivityLogin extends AppCompatActivity {
     }
 
     private void onSaveSessionUser(Usuario usuario) {
-        saveSessionUser.execute(new SaveSessionUser.RequestValues(usuario));
+        saveUserSession(usuario);
     }
 
 
@@ -196,6 +199,8 @@ public class ActivityLogin extends AppCompatActivity {
                         else {
                             usuario.setCargoNombre("Cliente");
                         }
+                        usuario.setEmpleadoNombre(user.getEmail());
+                        usuario.setFoto(user.getPhotoUrl().toString());
                         onSaveSessionUser(usuario);
                         Intent intent = new Intent(this, MainActivity.class);
                         startActivity(intent);
@@ -243,6 +248,26 @@ public class ActivityLogin extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         return dialog;
 
+    }
+
+
+    public boolean saveUserSession(Usuario usuario) {
+
+        SessionUser sessionUser = new SessionUser();
+        sessionUser.setNombrePersona(usuario.getEmpleadoNombre());
+        sessionUser.setPersonaId(1);
+        if (usuario.getCargoNombre().equals("Administrador"))
+            sessionUser.setUsuarioId(1);
+        else sessionUser.setUsuarioId(2);
+        sessionUser.setState(true);
+        sessionUser.setCargoId(1);
+        sessionUser.setLocalId(1);
+        sessionUser.setZonaId(1);
+        sessionUser.setFoto(usuario.getFoto());
+        sessionUser.setEmpleadoId(1);
+        sessionUser.save();
+        usuario.save();
+        return true;
     }
 
 

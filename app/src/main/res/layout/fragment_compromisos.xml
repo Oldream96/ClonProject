@@ -38,7 +38,7 @@
                 android:layout_marginRight="16dp"
                 android:background="@null"
                 android:fontFamily="sans-serif-condensed-light"
-                android:text="Sábados Productivos"
+                android:text="LISTA DE PEDIDOS ONLINE"
                 android:textAlignment="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -81,8 +81,10 @@
                 android:layout_below="@id/swipe_layout_compromisos"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvCompromisos"
@@ -155,8 +157,8 @@
             android:layout_height="wrap_content"
             fab:fab_colorNormal="@color/white"
             fab:fab_colorPressed="@color/white_pressed"
-            fab:fab_icon="@drawable/establecimiento_icon"
-            fab:fab_title="Compromiso de Ferreterías" />
+            fab:fab_icon="@drawable/money"
+            fab:fab_title="Crear nuevo pedido" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/action_derivados"
@@ -165,6 +167,7 @@
             fab:fab_colorNormal="@color/white"
             fab:fab_colorPressed="@color/white_pressed"
             fab:fab_icon="@drawable/ic_bank"
+            android:visibility="gone"
             fab:fab_title="Compromiso de Derivados" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
@@ -174,6 +177,7 @@
             fab:fab_colorNormal="@color/white"
             fab:fab_colorPressed="@color/white_pressed"
             fab:fab_icon="@drawable/money"
+            android:visibility="gone"
             fab:fab_title="Compromiso de Activados" />
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>

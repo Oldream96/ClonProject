@@ -11,7 +11,7 @@ public interface SPRemotoDataSourceInterface {
         void load(boolean state, T item);
     }
 
-    void getCompromisos(int idsupervisor, int mes ,int anio, Callback<List<ProveedorLocalUi>> callback);
+    void getCompromisos(int idsupervisor, String nombre, Callback<List<ProveedorLocalUi>> callback);
     void GetFerreteriasCompromiso(int idsupervisor,String fecha, String nombre,Callback<List<ProveedorLocalUi>> callback);
     void GetDerivadosCompromiso(int idsupervisor,String fecha, String nombre,Callback<List<ProveedorLocalUi>> callback);
     void GetActivadosCompromiso(int idsupervisor,String fecha, String nombre,Callback<List<ProveedorLocalUi>> callback);

@@ -50,6 +50,9 @@ public class MainLocalDataSource implements IMainLocalDataSource{
             SQLite.delete()
                     .from(Persona.class)
                     .query();
+            SQLite.delete()
+                    .from(SessionUser.class)
+                    .query();
 
             return true;
         } catch (Exception e) {

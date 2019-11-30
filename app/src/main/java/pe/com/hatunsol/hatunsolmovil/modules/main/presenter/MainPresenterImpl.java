@@ -33,13 +33,12 @@ public class MainPresenterImpl extends BasePresenterImpl<MainView> implements Ma
     @Override
     public void setExtras(Bundle extras) {
         super.setExtras(extras);
-        this.nombre = extras.getString("nombre");
-        this.correo = extras.getString("correo");
-        this.tipousuario = extras.getString("tipousuario");
-        usuario2 = new Usuario();
-        usuario2.setCargoNombre("Cliente");
-        usuario2.setEmpleadoNombre("administrador");
-        usuario2.setLogin("administrador");
+//        this.nombre = extras.getString("nombre");
+//        this.correo = extras.getString("correo");
+//        this.tipousuario = extras.getString("tipousuario");
+//        usuario2.setCargoNombre(tipousuario);
+//        usuario2.setEmpleadoNombre(nombre);
+//        usuario2.setLogin(correo);
     }
 
     @Override
@@ -71,7 +70,8 @@ public class MainPresenterImpl extends BasePresenterImpl<MainView> implements Ma
             if (view != null) view.close();
             return;
         }
-        view.showUserInformation(usuario2);
+        view.showInitCreditosFragment();
+        view.showUserInformation(usuario);
         //setUser();
         //sincronizeEstablecimientos();
 

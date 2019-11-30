@@ -55,8 +55,6 @@ import pe.com.hatunsol.hatunsolmovil.services.entities.SessionUser;
 public class CrearCompromisosActivity extends BaseActivity<CrearCompromisoView, CrearCompromisoPresenter> implements CrearCompromisoView, BaseFragmentListener, FerreteriaCompromisoListener {
 
 
-    @BindView(R.id.rvCompromisos)
-    RecyclerView rvFerreterias;
     @BindView(R.id.pbDetalleCompromiso)
     ProgressBar progressBar;
 
@@ -119,9 +117,9 @@ public class CrearCompromisosActivity extends BaseActivity<CrearCompromisoView, 
 
     private void setupAdapter() {
         //adapter = new FerreteriaCompromisoAdapter(getActivity(), 0, proveedorLocalUiList);
-        adapter = new FerreteriaCompromisoAdapter(new ArrayList<>(), this);
-        rvFerreterias.setLayoutManager(new LinearLayoutManager(getActivity()));
-        rvFerreterias.setAdapter(adapter);
+//        adapter = new FerreteriaCompromisoAdapter(new ArrayList<>(), this);
+//        rvFerreterias.setLayoutManager(new LinearLayoutManager(getActivity()));
+//        rvFerreterias.setAdapter(adapter);
 
     }
 
@@ -138,8 +136,8 @@ public class CrearCompromisosActivity extends BaseActivity<CrearCompromisoView, 
     @Override
     public void showFerreterias(List<ProveedorLocalUi> proveedorLocalUiList) {
 //        adapter = new FerreteriaCompromisoAdapter(getActivity(), 0, proveedorLocalUiList);
-        rvFerreterias.setAdapter(adapter);
-        adapter.setProveedorLocalUiList(proveedorLocalUiList);
+        //rvFerreterias.setAdapter(adapter);
+        //adapter.setProveedorLocalUiList(proveedorLocalUiList);
 //        validafechaHoy();
     }
 
