@@ -12,7 +12,7 @@
         android:layout_margin="35dp"
         android:contentDescription="@string/app_name"
         android:layout_centerInParent="true"
-        android:src="@drawable/hatun_logo_light"
+        android:src="@drawable/logopedidosonline"
 
         />
 

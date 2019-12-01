@@ -14,7 +14,8 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@android:drawable/star_on" />
+        android:src="@drawable/img2"
+         />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -122,12 +123,14 @@
 
     <Button
         android:id="@+id/btnGoogleSing"
-        android:layout_width="119dp"
-        android:layout_height="51dp"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
         android:layout_marginTop="12dp"
+        android:drawableStart="@drawable/common_google_signin_btn_icon_dark"
+        android:drawableLeft="@drawable/common_google_signin_btn_text_light"
         android:text="GoogleSign"
-        app:backgroundTint="@color/md_black_1000"
         android:textColor="@color/white"
+        app:backgroundTint="@color/md_black_1000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"

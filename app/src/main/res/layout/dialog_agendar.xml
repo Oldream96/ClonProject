@@ -16,7 +16,7 @@
         <ImageView
             android:layout_width="55dp"
             android:layout_height="40dp"
-            android:src="@drawable/hatun_logo"/>
+            android:src="@drawable/logopedidosonline"/>
 
         <TextView
             android:gravity="center_vertical"

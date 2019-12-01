@@ -2,13 +2,10 @@ package pe.com.hatunsol.hatunsolmovil.modules.main.ui;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.se.omapi.Session;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -48,10 +45,7 @@ import pe.com.hatunsol.hatunsolmovil.modules.SabadosProductivos.ui.SabadoProduct
 
 import pe.com.hatunsol.hatunsolmovil.modules.encuestas.RevisarEncuesta.ui.RevisarEncuestaActivity;
 import pe.com.hatunsol.hatunsolmovil.modules.encuestas.ui.EncuestaFragment;
-import pe.com.hatunsol.hatunsolmovil.modules.login.presenter.LoginPresenter;
 import pe.com.hatunsol.hatunsolmovil.modules.login.ui.ActivityLogin;
-import pe.com.hatunsol.hatunsolmovil.modules.login.ui.LoginActivity;
-import pe.com.hatunsol.hatunsolmovil.modules.login.ui.LoginView;
 import pe.com.hatunsol.hatunsolmovil.modules.main.data.source.MainRepository;
 import pe.com.hatunsol.hatunsolmovil.modules.main.data.source.local.MainLocalDataSource;
 import pe.com.hatunsol.hatunsolmovil.modules.main.data.source.remoto.MainRemotoDataSource;
@@ -60,9 +54,7 @@ import pe.com.hatunsol.hatunsolmovil.modules.main.domain.GetUser;
 import pe.com.hatunsol.hatunsolmovil.modules.main.domain.SincronizeEstablecimientos;
 import pe.com.hatunsol.hatunsolmovil.modules.main.presenter.MainPresenter;
 import pe.com.hatunsol.hatunsolmovil.modules.main.presenter.MainPresenterImpl;
-import pe.com.hatunsol.hatunsolmovil.services.entities.BE_Constantes;
 import pe.com.hatunsol.hatunsolmovil.services.entities.Persona;
-import pe.com.hatunsol.hatunsolmovil.services.entities.ProveedorLocal;
 import pe.com.hatunsol.hatunsolmovil.services.entities.SessionUser;
 import pe.com.hatunsol.hatunsolmovil.services.entities.Usuario;
 
@@ -269,14 +261,14 @@ public class MainActivity extends BaseActivity<MainView, MainPresenter> implemen
                 Picasso.with(getActivity())
                         .load(SessionUser.getCurrentUser().getFoto())
                         .transform(new CircleTransform())
-                        .placeholder(R.drawable.hatun_logo_light)
+                        .placeholder(R.drawable.logopedidosonline)
                         .into(imageUsuario);
 
             }catch (Exception e) {
                 Picasso.with(getActivity())
-                        .load(R.drawable.hatun_logo_light)
+                        .load(R.drawable.logopedidosonline)
                         .transform(new CircleTransform())
-                        .placeholder(R.drawable.hatun_logo_light)
+                        .placeholder(R.drawable.logopedidosonline)
                         .into(imageUsuario);
 
             }

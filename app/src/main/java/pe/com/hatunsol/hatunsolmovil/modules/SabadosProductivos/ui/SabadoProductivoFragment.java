@@ -282,11 +282,12 @@ public class SabadoProductivoFragment extends BaseFragment<SabadoProductivoView,
 
     @Override
     public void onClickListenerCompromiso(String nombre, String fecha, int codigoSupervisor) {
-        Intent intent = new Intent(getActivity(), CrearCompromisosActivity.class);
-        intent.putExtra("nombreCompromiso", nombre);
-        intent.putExtra("fechaCompromiso", fecha);
-        intent.putExtra("codigoSupervisor", codigoSupervisor);
-        startActivity(intent);
+//        Intent intent = new Intent(getActivity(), CrearCompromisosActivity.class);
+//        intent.putExtra("nombreCompromiso", nombre);
+//        intent.putExtra("fechaCompromiso", fecha);
+//        intent.putExtra("codigoSupervisor", codigoSupervisor);
+//        startActivity(intent);
+        Toast.makeText(getActivity(), "Por el momento Editar no está disponible!", Toast.LENGTH_SHORT).show();
         Log.d("punto", "Clicked");
     }
 

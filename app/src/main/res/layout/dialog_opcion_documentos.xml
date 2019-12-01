@@ -38,7 +38,7 @@
                     android:layout_height="40dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:src="@drawable/hatun_logo" />
+                    android:src="@drawable/logopedidosonline" />
 
                 <TextView
                     android:id="@+id/tv_title"

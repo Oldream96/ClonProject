@@ -11,7 +11,7 @@
         android:id="@+id/hatun_logo"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:src="@drawable/hatun_logo"
+        android:src="@drawable/logopedidosonline"
         app:layout_constraintBottom_toTopOf="@+id/cardview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
